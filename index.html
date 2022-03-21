@@ -10,19 +10,21 @@
 </head>
 
 <body>
-    <div class="cluster">
-        <h1>Pedra, Papel ou Tesoura!</h1>
-        <div>
-            <h2 id="teste">Escolhe:</h2>
+    <div id="wrapper">
+        <div class="cluster">
+            <h1>Pedra, Papel ou Tesoura!</h1>
+            <div>
+                <h2 id="teste">Escolhe:</h2>
+            </div>
+            <div>
+                <button type="button" onclick='jogar(pedra)'>Pedra</button>
+                <button type="button" onclick='jogar(papel)'>Papel</button>
+                <button type="button" onclick='jogar(tesoura)'>Tesoura</button>
+            </div>
+            <div class="resultado" id="resultado">Pronto?</div>
+            <div class="final" id="final">-</div>
+            <img class="imagem" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Rock-paper-scissors.svg/1024px-Rock-paper-scissors.svg.png" alt="PRC">
         </div>
-        <div>
-            <button type="button" onclick='jogar(pedra)'>Pedra</button>
-            <button type="button" onclick='jogar(papel)'>Papel</button>
-            <button type="button" onclick='jogar(tesoura)'>Tesoura</button>
-        </div>
-        <div class="resultado" id="resultado">Pronto?</div>
-        <div class="final" id="final">-</div>
-        <img class="imagem" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Rock-paper-scissors.svg/1024px-Rock-paper-scissors.svg.png" alt="PRC">
     </div>
 </body>
 
