@@ -4,7 +4,7 @@ let tesoura = "tesoura";
 let rondasJogadas = 0;
 let pontos = 0;;
 
-function randomIntFromInterval(min, max) { // min and max included 
+function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
@@ -20,7 +20,7 @@ function jogar(selecao) {
     var final = document.getElementById("final");
     final.style.color = 'white';
     switch (computador) {
-        case 1:
+        case 1: //pedra
             if (selecao == pedra) {
                 resultado.textContent = "Escolheste pedra. O computador também escolheu pedra. 0 Pontos.";
                 resultado.classList.add("amarelo");
@@ -34,7 +34,7 @@ function jogar(selecao) {
                 resultado.classList.add("vermelho");
             }
             break;
-        case 2:
+        case 2: //papel
             if (selecao == pedra) {
                 resultado.textContent = "Escolheste pedra. O computador escolheu papel. -1 Ponto!";
                 pontos--;
@@ -48,7 +48,7 @@ function jogar(selecao) {
                 resultado.classList.add("verde");
             }
             break;
-        case 3:
+        case 3: // tesoura
             if (selecao == pedra) {
                 resultado.textContent = "Escolheste pedra. O computador escolheu tesoura. +1 Ponto!";
                 pontos++;
