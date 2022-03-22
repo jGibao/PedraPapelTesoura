@@ -22,11 +22,6 @@ button {
     flex-direction: column;
 }
 
-.imagem {
-    height: 300px;
-    margin: 100px;
-}
-
 .resultado {
     display: inline;
     font-family: 'Courier New', Courier, monospace;
@@ -64,4 +59,33 @@ button {
     margin-left: auto;
     margin-right: auto;
     width: 960px;
+}
+
+.imagem {
+    height: 300px;
+    margin: 50px;
+    visibility: hidden;
+    margin-bottom: 0;
+}
+
+.imagens {
+    display: inline-flex;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(0, 0, 0);
+}
+
+p {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
 }
