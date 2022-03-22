@@ -28,6 +28,7 @@ button {
     color: white;
     transition: 0.05s;
     font-weight: bolder;
+    padding: 10px;
 }
 
 button:active {

@@ -102,7 +102,7 @@ function jogar(selecao) {
             imagemJogador.style.opacity = "0%";
             imagemComputador.style.opacity = "0%";
             textJogadores.style.opacity = "0%";
-        }, 1500);
+        }, 2000);
     }
     if (rondasJogadas == 5) {
         acabaJogo();
