@@ -9,12 +9,19 @@ let imagemComputador;
 let textJog;
 let textComp;
 let botoes;
+let preload1, preload2, preload3;
 
 function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
 function prep() {
+    preload1 = document.getElementById("jogadorImg");
+    preload2 = document.getElementById("jogadorImg");
+    preload3 = document.getElementById("jogadorImg");
+    preload1.src = "pedra.png";
+    preload2.src = "papel.png";
+    preload3.src = "tesoura.png";
     imagemJogador = document.getElementById("jogadorImg");
     imagemComputador = document.getElementById("computadorImg");
     textJog = document.getElementById("jogador");
