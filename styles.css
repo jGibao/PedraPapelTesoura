@@ -10,18 +10,29 @@ body {
 h1 {
     font-family: 'Courier New', Courier, monospace;
     font-size: 41px;
+    margin: 20px;
 }
 
 h2 {
     font-family: 'Courier New', Courier, monospace;
     font-size: 30px;
-    font-weight: normal;
+    font-weight: bolder;
+    margin: 20px;
 }
 
 button {
     font-family: 'Courier New', Courier, monospace;
     font-size: 25px;
     margin: 10px;
+    background-color: black;
+    color: white;
+    transition: 0.05s;
+    font-weight: bolder;
+}
+
+button:active {
+    background-color: white;
+    color: black;
 }
 
 .cluster {
@@ -43,6 +54,7 @@ button {
     transition: 0.5s;
     font-weight: bolder;
     margin: 10px;
+    opacity: 0%;
 }
 
 .verde {
@@ -62,6 +74,7 @@ button {
     font-size: 40px;
     color: white;
     transition: 0.5s;
+    font-weight: bolder;
 }
 
 #wrapper {
@@ -73,8 +86,9 @@ button {
 .imagem {
     height: 300px;
     margin: 50px;
-    visibility: hidden;
+    opacity: 0%;
     margin-bottom: 0;
+    transition: opacity 0.5s;
 }
 
 .imagens {
@@ -95,4 +109,18 @@ p {
     font-family: 'Courier New', Courier, monospace;
     color: white;
     font-weight: bolder;
+}
+
+.jogadores {
+    display: inline-flex;
+    opacity: 0%;
+    transition: opacity 0.5s;
+}
+
+h3 {
+    font-size: 30px;
+    margin-top: 40px;
+    margin-right: 140px;
+    margin-left: 140px;
+    font-family: 'Courier New', Courier, monospace;
 }

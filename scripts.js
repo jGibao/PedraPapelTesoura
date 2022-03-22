@@ -5,6 +5,7 @@ let rondasJogadas = 0;
 let pontos = 0;
 var imagemJogador;
 var imagemComputador;
+var textJogadores;
 
 function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -13,14 +14,16 @@ function randomIntFromInterval(min, max) {
 function prep() {
     imagemJogador = document.getElementById("jogador");
     imagemComputador = document.getElementById("computador");
-    imagemJogador.style.visibility = "visible";
-    imagemComputador.style.visibility = "visible";
+    textJogadores = document.getElementById("jogadores");
+    imagemJogador.style.opacity = "100%";
+    imagemComputador.style.opacity = "100%";
     imagemComputador.style.transform = "scaleX(-1)";
+    resultado.style.opacity = "100%";
 }
 
 function jogar(selecao) {
     prep();
-
+    textJogadores.style.opacity = "100%";
     rondasJogadas++;
     let computador = randomIntFromInterval(1, 3);
     var resultado = document.getElementById("resultado");
@@ -91,24 +94,35 @@ function jogar(selecao) {
                 imagemComputador.src = "tesoura.png";
             }
             break;
+
     }
 
+    if (rondasJogadas < 5) {
+        setTimeout(() => {
+            imagemJogador.style.opacity = "0%";
+            imagemComputador.style.opacity = "0%";
+            textJogadores.style.opacity = "0%";
+        }, 1500);
+    }
     if (rondasJogadas == 5) {
-        acabaRonda();
+        acabaJogo();
     }
 
-    function acabaRonda() {
-        final.style.color = 'black';
-        if (pontos > 0) {
-            final.textContent = "Ganhaste o jogo com " + pontos + " ponto(s)!";
-        } else if (pontos == 0) {
-            final.textContent = "Empate!";
-        } else if (pontos < 0) {
-            final.textContent = "Perdeste o jogo!";
-        }
-        rondasJogadas = 0;
-        pontos = 0;
-        //window.location.reload();
-    }
+}
 
+function acabaJogo() {
+    setTimeout(() => {
+        resultado.style.opacity = "0%";
+    }, 1500);
+    final.style.color = 'black';
+    if (pontos > 0) {
+        final.textContent = "Ganhaste o jogo com " + pontos + " ponto(s)!";
+    } else if (pontos == 0) {
+        final.textContent = "Empate!";
+    } else if (pontos < 0) {
+        final.textContent = "Perdeste o jogo!";
+    }
+    rondasJogadas = 0;
+    pontos = 0;
+    //window.location.reload();
 }
