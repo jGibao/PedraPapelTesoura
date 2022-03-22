@@ -83,6 +83,8 @@ function jogar(selecao) {
             break;
 
     }
+    console.log(pontosJog);
+    console.log(pontosComp);
     for (let botao of botoes) {
         botao.disabled = true;
     }
@@ -101,6 +103,8 @@ function jogar(selecao) {
         }, 2500);
     }
     if (rondasJogadas == 5) {
+        textJog.textContent = "Jogador: " + pontosJog;
+        textComp.textContent = "Computador: " + pontosComp;
         acabaJogo();
     }
 
