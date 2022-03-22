@@ -4,11 +4,11 @@ let tesoura = "tesoura";
 let rondasJogadas = 0;
 let pontosJog = 0;
 let pontosComp = 0;
-var imagemJogador;
-var imagemComputador;
-var textJog;
-var textComp;
-var botoes;
+let imagemJogador;
+let imagemComputador;
+let textJog;
+let textComp;
+let botoes;
 
 function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -29,14 +29,13 @@ function jogar(selecao) {
     prep();
     rondasJogadas++;
     let computador = randomIntFromInterval(1, 3);
-    var final = document.getElementById("final");
+    let final = document.getElementById("final");
     final.style.color = 'white';
     switch (computador) {
         case 1: //pedra
             if (selecao == pedra) {
                 imagemJogador.src = "pedra.png";
                 imagemComputador.src = "pedra.png";
-
             } else if (selecao == papel) {
                 pontosJog++;
                 imagemJogador.src = "papel.png";
@@ -101,17 +100,19 @@ function jogar(selecao) {
 }
 
 function acabaJogo() {
-    setTimeout(() => {
-        resultado.style.opacity = "0%";
-    }, 1500);
     final.style.color = 'black';
     if (pontosJog > pontosComp) {
         final.textContent = "Ganhaste o jogo por " + (pontosJog - pontosComp) + " ponto(s)!";
     } else if (pontosJog == pontosComp) {
-        final.textContent = "Empate com " + pontosJog + " pontos.";
+        final.textContent = "Empate com " + pontosJog + " ponto(s).";
     } else if (pontosJog < pontosComp) {
         final.textContent = "Perdeste o jogo por " + (pontosComp - pontosJog) + " ponto(s).";
     }
+    setTimeout(() => {
+        imagemJogador.style.opacity = "0%";
+        imagemComputador.style.opacity = "0%";
+
+    }, 2000);
     rondasJogadas = 0;
     pontosJog = 0;
     pontosComp = 0;
