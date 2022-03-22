@@ -16,9 +16,9 @@ function randomIntFromInterval(min, max) {
 }
 
 function prep() {
-    preload1 = document.getElementById("jogadorImg");
-    preload2 = document.getElementById("jogadorImg");
-    preload3 = document.getElementById("jogadorImg");
+    preload1 = new Image();
+    preload2 = new Image();
+    preload3 = new Image();
     preload1.src = "pedra.png";
     preload2.src = "papel.png";
     preload3.src = "tesoura.png";
