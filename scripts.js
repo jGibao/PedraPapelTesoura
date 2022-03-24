@@ -32,6 +32,11 @@ function prep() {
     imagemComputador.style.transform = "scaleX(-1)";
 }
 
+function setImagens(imagem1, imagem2) {
+    imagemJogador.src = imagem1;
+    imagemComputador.src = imagem2;
+}
+
 function jogar(selecao) {
     prep();
     rondasJogadas++;
@@ -41,50 +46,39 @@ function jogar(selecao) {
     switch (computador) {
         case 1: //pedra
             if (selecao == pedra) {
-                imagemJogador.src = "pedra.png";
-                imagemComputador.src = "pedra.png";
+                setImagens("pedra.png", "pedra.png");
             } else if (selecao == papel) {
                 pontosJog++;
-                imagemJogador.src = "papel.png";
-                imagemComputador.src = "pedra.png";
+                setImagens("papel.png", "pedra.png");
             } else if (selecao == tesoura) {
                 pontosComp++;
-                imagemJogador.src = "tesoura.png";
-                imagemComputador.src = "pedra.png";
+                setImagens("tesoura.png", "pedra.png");
             }
             break;
         case 2: //papel
             if (selecao == pedra) {
                 pontosComp++;
-                imagemJogador.src = "pedra.png";
-                imagemComputador.src = "papel.png";
+                setImagens("pedra.png", "papel.png");
             } else if (selecao == papel) {
-                imagemJogador.src = "papel.png";
-                imagemComputador.src = "papel.png";
+                setImagens("papel.png", "papel.png");
             } else if (selecao == tesoura) {
                 pontosJog++;
-                imagemJogador.src = "tesoura.png";
-                imagemComputador.src = "papel.png";
+                setImagens("tesoura.png", "papel.png");
             }
             break;
         case 3: // tesoura
             if (selecao == pedra) {
                 pontosJog++;
-                imagemJogador.src = "pedra.png";
-                imagemComputador.src = "tesoura.png";
+                setImagens("pedra.png", "tesoura.png");
             } else if (selecao == papel) {
                 pontosComp++;
-                imagemJogador.src = "papel.png";
-                imagemComputador.src = "tesoura.png";
+                setImagens("papel.png", "tesoura.png");
             } else if (selecao == tesoura) {
-                imagemJogador.src = "tesoura.png";
-                imagemComputador.src = "tesoura.png";
+                setImagens("tesoura.png", "tesoura.png");
             }
             break;
 
     }
-    console.log(pontosJog);
-    console.log(pontosComp);
     for (let botao of botoes) {
         botao.disabled = true;
     }
@@ -119,18 +113,19 @@ function acabaJogo() {
     } else if (pontosJog < pontosComp) {
         final.textContent = "Perdeste o jogo por " + (pontosComp - pontosJog) + " ponto(s).";
     }
+
     setTimeout(() => {
         imagemJogador.style.opacity = "0%";
         imagemComputador.style.opacity = "0%";
-
     }, 2000);
+
     rondasJogadas = 0;
     pontosJog = 0;
     pontosComp = 0;
+
     setTimeout(() => {
         for (let botao of botoes) {
             botao.disabled = false;
         }
     }, 2500);
-    //window.location.reload();
 }
